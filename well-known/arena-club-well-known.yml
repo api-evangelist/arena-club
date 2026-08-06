@@ -1,0 +1,84 @@
+generated: '2026-08-06'
+method: probed
+source: live HTTP probes of every Arena Club host reachable from apis.yml
+summary: >-
+  No /.well-known/* document is published on any Arena Club host. Every path
+  below returned 404. On arenaclub.com the 404 is served as the Next.js
+  single-page-app shell (identical byte length to a control path that does not
+  exist), so nothing here is a soft-200 false positive.
+hosts:
+- host: arenaclub.com
+  note: Next.js SPA; 404s render the app shell (113852 bytes, byte-identical to a control path)
+  probes:
+  - path: /.well-known/security.txt
+    status: 404
+    found: false
+  - path: /.well-known/openid-configuration
+    status: 404
+    found: false
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    found: false
+  - path: /.well-known/api-catalog
+    status: 404
+    found: false
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    found: false
+  - path: /.well-known/agent-card.json
+    status: 404
+    found: false
+  - path: /.well-known/agent.json
+    status: 404
+    found: false
+- host: api.arenaclub.com
+  note: Express application behind Cloudflare; root returns "Cannot GET /"
+  probes:
+  - path: /.well-known/security.txt
+    status: 404
+    found: false
+  - path: /.well-known/openid-configuration
+    status: 404
+    found: false
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    found: false
+  - path: /.well-known/api-catalog
+    status: 404
+    found: false
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    found: false
+  - path: /.well-known/agent-card.json
+    status: 404
+    found: false
+- host: info.arenaclub.com
+  note: Webflow-hosted marketing/legal site
+  probes:
+  - path: /.well-known/security.txt
+    status: 404
+    found: false
+  - path: /.well-known/openid-configuration
+    status: 404
+    found: false
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    found: false
+  - path: /.well-known/api-catalog
+    status: 404
+    found: false
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    found: false
+- host: pop.arenaclub.com
+  note: >-
+    Retool-hosted internal application. Answers HTTP 200 with the Retool SPA shell
+    for EVERY /.well-known/* path, including a control path that cannot exist.
+    The 200 on /.well-known/agent-card.json is therefore a catch-all false
+    positive, not an A2A Agent Card - no card recorded.
+  probes:
+  - path: /.well-known/agent-card.json
+    status: 200
+    found: false
+    rejected: soft-200 SPA catch-all (body is HTML, byte-identical to control path)
+files: []

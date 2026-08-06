@@ -1,0 +1,53 @@
+# Arena Club
+
+> Arena Club (Arenaclub.com, Inc.) is a technology-first trading-card and collectibles
+> platform founded in 2022 by Brian Lee and Derek Jeter. It combines AI- and
+> computer-vision-assisted card grading, an insured 24/7-surveilled physical vault, a
+> digital "Showroom" for organizing vaulted cards, and an online marketplace for buying,
+> selling and trading slabbed sports and trading-card-game cards. Members submit cards
+> for grading and vaulting, transact in the marketplace, open digital packs, and can
+> retrieve physical cards from the vault on demand.
+
+## API status
+
+Arena Club publishes **no public developer program**. As of 2026-08-06 there is no
+developer portal, no API reference, no OpenAPI/AsyncAPI/GraphQL contract, no MCP server,
+no A2A Agent Card, no `llms.txt`, and no `/.well-known/*` document on any Arena Club host.
+An application backend exists at `api.arenaclub.com` (an Express service behind Cloudflare)
+that serves the Arena Club web and mobile clients, but it is undocumented, unversioned in
+public, and not offered for third-party integration. Nothing in this profile describes a
+callable public API, because none is published.
+
+## Product
+
+- [Arena Club](https://arenaclub.com): Grade, vault, buy, sell and trade sports and TCG cards
+- [Marketplace](https://arenaclub.com/marketplace): Buy, sell and trade vaulted, graded cards
+- [How It Works](https://arenaclub.com/how-it-works): Submit, grade, vault and showcase flow
+- [Grading](https://arenaclub.com/grading): AI/computer-vision-assisted card grading service
+- [Submit](https://arenaclub.com/submit): Send cards in for grading and vaulting
+- [Sellers](https://arenaclub.com/sellers): Seller-side of the marketplace
+
+## Apps
+
+- [iOS App Store](https://apps.apple.com/us/app/arena-club-sports-tcg-card/id6499444724): Arena Club: Sports & TCG Card, published by Arenaclub.com, Inc.
+- [Google Play](https://play.google.com/store/apps/details?id=com.arenaclub.mobile): Arena Club: Sports & TCG Cards
+
+## Account and support
+
+- [Sign up](https://arenaclub.com/signup): Create an Arena Club account
+- [Help Center](https://arenaclubsupport.zendesk.com/hc/en-us): Zendesk-hosted support articles
+- Support email: support@arenaclub.com
+
+## Legal
+
+- [Terms of Service](https://info.arenaclub.com/tos)
+- [Privacy Policy](https://info.arenaclub.com/privacy)
+
+## Engineering
+
+- [GitHub organization](https://github.com/arenaclub): One public repository (a fork of a Bitrise CodePush CLI plugin); no SDKs or API clients published
+- [Careers](https://job-boards.greenhouse.io/arenaclub)
+
+## Optional
+
+- [API Evangelist profile](https://apis.io/provider/arena-club/): Independent third-party profile of Arena Club's public API surface

@@ -1,17 +1,34 @@
 aid: arena-club
 name: Arena Club
-description: 'Arena Club is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Arena Club is a technology-first trading-card and collectibles platform
+  founded in 2022 by entrepreneur Brian Lee and baseball Hall-of-Famer Derek Jeter,
+  operating as Arenaclub.com, Inc. The company combines AI- and computer-vision-assisted
+  card grading, an insured physical vault with 24/7 surveillance and climate control,
+  a digital "Showroom" where collectors organize vaulted cards into collections, and
+  an online marketplace for buying, selling and trading slabbed sports and trading-card-game
+  cards. Members submit cards for grading and vaulting, browse and transact in the
+  marketplace, open digital packs, and can retrieve physical cards from the vault on
+  demand. Arena Club ships web and native iOS/Android apps but publishes no public
+  developer program, API documentation, or machine-readable API contract.'
 url: https://raw.githubusercontent.com/api-evangelist/arena-club/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
+x-source-url: https://forgeglobal.com/arena-club_stock/
 x-tier: stub
 x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-06'
 modified: '2026-08-06'
+image: https://assets.arenaclub.com/homepage_assets/social_img.png
 tags:
 - Company
+- Collectibles
+- Trading Cards
+- Marketplace
+- E-Commerce
+- Sports
+- Grading
+- Consumer
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +36,45 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/arena-club-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/arena-club_stock/
+  url: https://arenaclub.com
+- type: Marketplace
+  url: https://arenaclub.com/marketplace
+- type: Support
+  url: https://arenaclubsupport.zendesk.com/hc/en-us
+- type: SignUp
+  url: https://arenaclub.com/signup
+- type: TermsOfService
+  url: https://info.arenaclub.com/tos
+- type: PrivacyPolicy
+  url: https://info.arenaclub.com/privacy
+- type: GitHubOrganization
+  url: https://github.com/arenaclub
+- type: LLMsTxt
+  url: llms/arena-club-llms.txt
+x-enrichment:
+  date: '2026-08-06'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Arena Club ships a Next.js web app and native iOS/Android apps backed by an
+    undocumented Express service at api.arenaclub.com, but publishes no developer
+    portal, no API reference, no SDK and no machine-readable contract - every
+    OpenAPI, GraphQL, MCP, agent-card and /.well-known probe against
+    arenaclub.com, api.arenaclub.com and info.arenaclub.com returned 404.
+  evidence:
+  - url: https://api.arenaclub.com/openapi.json
+    status: 404
+  - url: https://api.arenaclub.com/graphql
+    status: 404
+  - url: https://api.arenaclub.com/.well-known/agent-card.json
+    status: 404
+  - url: https://arenaclub.com/.well-known/api-catalog
+    status: 404
+  checked: '2026-08-06'
